@@ -14,9 +14,9 @@ public:
     Sink();
     virtual ~Sink();
 protected:
-    virtual void initialize();
-    virtual void finish();
-    virtual void handleMessage(cMessage *msg);
+    virtual void initialize(); // se ejecuta una vez al iniciar el modulo
+    virtual void finish(); // se va ejecutar una vez al terminal el modulo
+    virtual void handleMessage(cMessage *msg); // llamada cada vez que hay un evento
 };
 
 Define_Module(Sink);
