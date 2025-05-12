@@ -1,0 +1,27 @@
+file 27457 1747022882                                           
+version 3
+run General-0-20250512-00:10:46-18184
+attr configname General
+attr datetime 20250512-00:10:46
+attr datetimef 20250512-001046
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 18184
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Network
+config sim-time-limit 200s
+config Network.gen.generationInterval exponential(0.001)
+config Network.queue.serviceTime exponential(0.001)
+
+vector 0 Network.sink Delay ETV
+0	599 26857 4 3175 0.000795874505 0.821056275725 765 0 0.025723578585 6.633406213422 0.10084453970182
+
