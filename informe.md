@@ -287,6 +287,10 @@ Su naturaleza adaptativa lo hace particularmente adecuado para entornos de red d
 
 Las futuras investigaciones pueden centrarse en el desarrollo de algoritmos de control de flujo más robustos y adaptables, así como en la integración con otras técnicas de gestión de calidad de servicio para optimizar aún más el rendimiento de la red.
 
+## herramientas de Inteligencia Artificia
+Se utilizaron modelos de lenguaje generativo como Claude, Gemini para preguntar sobre tipo de estructuras y modelos de objetos, auque fueron bastante erroneos fue de ayuda teorica para implementar lo que teniamos en mente, tambien usamos Copilot de Visual Studio code pero tambien con mucho cuidado por que tambien no eran del todo correctas sus sugerencias. 
+
+
 ## Referencias
 
 1. Tanenbaum, A. S., & Wetherall, D. J. (2021). Computer Networks (6th ed.). Pearson.
