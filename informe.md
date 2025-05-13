@@ -56,14 +56,17 @@ En este primer caso evaluamos la ocupación de los tres buffers (`NodeRx`, `Node
 
 Como podemos ver desde el inicio, la tasa de transferencia hacia `NodeRx` es mayor que la tasa que va desde `NodeRx` hacia Sink. Esto provoca que entren más paquetes al sistema de los que pueden salir. Por lo tanto, si el `generationInterval` es muy pequeño y se generan muchos paquetes por segundo, el buffer de `NodeRx` se empieza a llenar hasta colapsar, ya que los paquetes se acumulan más rápido de lo que pueden ser procesados.
 
-**Figura 1.** `generationInterval = 1.0 s`  
-![Buffer size vector (interval 1.0 s)](/mnt/data/Line Chart(1).png)
+**Figura 1.** `generationInterval = 0.1 s`  
+![Buffer size vector (interval 0.1 s)](imagenes/figura0.jpeg)
 
-**Figura 2.** `generationInterval = 0.3 s`  
-![Buffer size vector (interval 0.3 s)](/mnt/data/Line Chart(0.3).png)
+**Figura 2.** `generationInterval = 0.2 s`  
+![Buffer size vector (interval 0.2 s)](imagenes/figura2.png)
 
-**Figura 3.** `generationInterval = 0.2 s`  
-![Buffer size vector (interval 0.2 s)](/mnt/data/Line Chart(0.2).png)
+**Figura 3.** `generationInterval = 0.3 s`  
+![Buffer size vector (interval 0.3 s)](imagenes/figura3.png)
+
+**Figura 4.** `generationInterval = 1.0 s`  
+![Buffer size vector (interval 1.0 s)](imagenes/figura8.png)
 
 Observaciones:
 
@@ -77,16 +80,16 @@ En el segundo caso, aunque los buffers de entrada y salida tienen la misma capac
 
 Se observan cuellos de botella cuando la velocidad de generación de paquetes supera la capacidad de salida del sistema. Los buffers comienzan a saturarse rápidamente con intervalos bajos.
 
-**Figura 4.** `generationInterval = 0.1 s`  
+**Figura 1.** `generationInterval = 0.1 s`  
 ![Buffer size vector (interval 0.1 s)](imagenes/figura4.png)
 
-**Figura 5.** `generationInterval = 0.2 s`  
+**Figura 2.** `generationInterval = 0.2 s`  
 ![Buffer size vector (interval 0.2 s)](imagenes/figura5.png)
 
-**Figura 6.** `generationInterval = 0.3 s`  
+**Figura 3.** `generationInterval = 0.3 s`  
 ![Buffer size vector (interval 0.3 s)](imagenes/figura6.png)
 
-**Figura 7.** `generationInterval = 1.0 s`  
+**Figura 4.** `generationInterval = 1.0 s`  
 ![Buffer size vector (interval 1.0 s)](imagenes/figura7.png)
 
 
