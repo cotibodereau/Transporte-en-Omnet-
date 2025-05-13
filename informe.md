@@ -70,3 +70,38 @@ Observaciones:
 - Para generationInterval = 1.0 s (Figura 1) los tres buffers se mantienen casi vacíos, sin picos de saturación.
 - Con generationInterval = 0.3 s (Figura 2)  empiezan a haber pequeñas oscilaciones en el buffer de recepción (NodeRx), pero sin llegar a colapsar.
 - Al reducir a generationInterval = 0.2 s (Figura 3) el buffer de NodeRx se satura claramente.
+
+#### Hipótesis segundo caso:
+
+En el segundo caso, aunque los buffers de entrada y salida tienen la misma capacidad, el problema ocurre en el medio: el enlace entre `Queue` y `NodeRx` tiene una tasa de 0.5 Mbps, mientras que los demás tienen 1 Mbps. Esto hace que los paquetes se acumulen en la cola intermedia (`Queue`), ya que llegan más rápido de lo que pueden continuar. Si el `generationInterval` es bajo, se genera un gran volumen de paquetes que quedan atrapados esperando, y si la cola se llena, empiezan a perderse. En este caso, el cuello de botella no es el receptor, sino la red misma, que no puede mover los datos lo suficientemente rápido.
+
+Se observan cuellos de botella cuando la velocidad de generación de paquetes supera la capacidad de salida del sistema. Los buffers comienzan a saturarse rápidamente con intervalos bajos.
+
+
+**Figura 4.** `generationInterval = 0.1 s`  
+![Buffer size vector (interval 0.1 s)](/mnt/data/Line Chart(0.1).png)
+
+**Figura 5.** `generationInterval = 0.2 s`  
+![Buffer size vector (interval 0.2 s)](/mnt/data/Line Chart(0.2).png)
+
+**Figura 6.** `generationInterval = 0.3 s`  
+![Buffer size vector (interval 0.3 s)](/mnt/data/Line Chart(0.3).png)
+
+**Figura 7.** `generationInterval = 1.0 s`  
+![Buffer size vector (interval 1.0 s)](/mnt/data/Line Chart(1).png)
+
+**Observaciones:**
+
+- Con `generationInterval = 0.1 s` (Figura 4) el buffer intermedio (`Queue`) se llena al máximamo (unos 200 paquetes) muy rápidamente, mientras que `NodeRx` y `NodeTx` se mantienen bajos.
+- Para `generationInterval = 0.2 s` (Figura 5) aparecen picos importantes en `Queue` (hasta unos 30 paquetes), indicando saturación.
+- Con `generationInterval = 0.3 s` (Figura 6) la carga en `Queue` es moderada.
+- Al aumentar a `generationInterval = 1.0 s` (Figura 7) todos los buffers permanecen prácticamente vacíos, sin riesgo de pérdida de paquetes.
+
+
+### Discusión
+
+* En el **caso 1**, el problema aparece porque el receptor no puede recibir datos tan rápido como se envían. El buffer de `NodeRx` se llena enseguida si se generan muchos paquetes seguidos.
+* En el **caso 2**, el problema está en la parte del medio de la red (`Queue`). Como los datos no pueden pasar lo suficientemente rápido, se empieza a formar una cola y algunos paquetes se pierden.
+* En ambos casos, cuando el `generationInterval` es muy bajo (alta carga), se pierden muchos paquetes. A medida que el intervalo aumenta, disminuyen las pérdidas porque la red puede procesar los datos sin saturarse.
+
+---
