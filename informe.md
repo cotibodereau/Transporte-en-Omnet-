@@ -144,8 +144,8 @@ La red simulada comprende una arquitectura modular con los siguientes componente
 - **Sink**: Receptor final que recopila estadísticas sobre rendimiento y latencia.
 
 Se implementa un canal de retorno para la retroalimentación desde TransportRx a TransportTx.
-
-[Diagrama de Arquitectura de la Red]
+**Diagrama de Arquitectura de la Red.** 
+![Buffer size vector (interval 0.1 s)](imagenes/nedwork.png)
 
 ### Mecanismo de Control Adaptativo DynamicFlow
 
@@ -204,33 +204,24 @@ Las métricas clave incluyen:
 ### Presentación y Análisis de Resultados
 
 #### Throughput vs. Tiempo
-
-[Gráfico de Throughput vs. Tiempo]
-
+![Buffer size vector (interval 0.1 s)](imagenes/Throughput.png)
 El gráfico muestra el throughput de la red con y sin el algoritmo DynamicFlow. Se observa que, sin control de flujo, el throughput se satura y disminuye debido a la congestión, lo que resulta en una alta pérdida de paquetes. En contraste, con el control de flujo adaptativo, el throughput se mantiene estable y alto, lo que demuestra la eficacia del mecanismo para evitar la congestión.
 
 #### Tasa de Envío Adaptativa (DecrementSendRatio)
-
-[Gráfico de Tasa de Envío Adaptativa]
-
+![Buffer size vector (interval 0.1 s)](imagenes/tasaenvadap.png)
 Este gráfico ilustra la dinámica de ajuste del parámetro DecrementSendRatio a lo largo del tiempo. Se pueden observar los incrementos rápidos en respuesta a la congestión y las reducciones graduales durante periodos de estabilidad, permitiendo al sistema adaptarse a las condiciones cambiantes de la red y mantener un alto rendimiento.
 
 #### Carga Ofrecida vs. Carga Recibida
-
-[Gráfico de Carga Ofrecida vs. Carga Recibida]
+![Buffer size vector (interval 0.1 s)](imagenes/carofVSCarRec.png)
 
 El gráfico muestra la carga ofrecida versus la carga recibida para ambos casos. En el caso sin control de flujo, a medida que aumenta la carga ofrecida, la carga recibida se estanca, lo que indica una congestión severa y pérdida de paquetes. Con el control de flujo adaptativo, la carga recibida sigue de cerca a la carga ofrecida, lo que demuestra que el sistema puede manejar altas cargas sin congestión.
 
 #### Pérdida de Paquetes
-
-[Gráfico de Pérdida de Paquetes vs. Tiempo]
-
+![Buffer size vector (interval 0.1 s)](imagenes/perdpack.png)
 El gráfico muestra la cantidad de paquetes perdidos en función del tiempo. Se puede observar claramente cómo el mecanismo de control adaptativo reduce significativamente la pérdida de paquetes en comparación con la red sin control de flujo.
 
 #### Ocupación del Búfer
-
-[Gráfico de Ocupación del Búfer]
-
+![Buffer size vector (interval 0.1 s)](imagenes/OBDF.png)
 Este gráfico muestra cómo la ocupación del búfer se mantiene en niveles seguros con DynamicFlow, evitando los desbordamientos que ocurren en implementaciones estándar.
 
 ### Impacto en Métricas Clave de Rendimiento
