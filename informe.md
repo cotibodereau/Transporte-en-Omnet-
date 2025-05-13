@@ -52,24 +52,24 @@ Usamos una configuración básica: NodeTx → Queue → NodeRx → Sink, donde N
 ### Resultados
 
 #### Hipótesis primer caso:
-En este primer caso evaluamos la ocupación de los tres buffers (NodeRx, NodeTx y Queue) para distintos valores de generationInterval.  
+En este primer caso evaluamos la ocupación de los tres buffers (`NodeRx`, `NodeTx` y `Queue`) para distintos valores de `generationInterval`.  
 
-Como podemos ver desde el inicio, la tasa de transferencia hacia NodeRx es mayor que la tasa que va desde NodeRx hacia Sink. Esto provoca que entren más paquetes al sistema de los que pueden salir. Por lo tanto, si el generationInterval es muy pequeño y se generan muchos paquetes por segundo, el buffer de NodeRx se empieza a llenar hasta colapsar, ya que los paquetes se acumulan más rápido de lo que pueden ser procesados.
+Como podemos ver desde el inicio, la tasa de transferencia hacia `NodeRx` es mayor que la tasa que va desde `NodeRx` hacia Sink. Esto provoca que entren más paquetes al sistema de los que pueden salir. Por lo tanto, si el `generationInterval` es muy pequeño y se generan muchos paquetes por segundo, el buffer de `NodeRx` se empieza a llenar hasta colapsar, ya que los paquetes se acumulan más rápido de lo que pueden ser procesados.
 
-*Figura 1.* generationInterval = 1.0 s  
+**Figura 1.** `generationInterval = 1.0 s`  
 ![Buffer size vector (interval 1.0 s)](/mnt/data/Line Chart(1).png)
 
-*Figura 2.* generationInterval = 0.3 s  
+**Figura 2.** `generationInterval = 0.3 s`  
 ![Buffer size vector (interval 0.3 s)](/mnt/data/Line Chart(0.3).png)
 
-*Figura 3.* generationInterval = 0.2 s  
+**Figura 3.** `generationInterval = 0.2 s`  
 ![Buffer size vector (interval 0.2 s)](/mnt/data/Line Chart(0.2).png)
 
 Observaciones:
 
-- Para generationInterval = 1.0 s (Figura 1) los tres buffers se mantienen casi vacíos, sin picos de saturación.
-- Con generationInterval = 0.3 s (Figura 2)  empiezan a haber pequeñas oscilaciones en el buffer de recepción (NodeRx), pero sin llegar a colapsar.
-- Al reducir a generationInterval = 0.2 s (Figura 3) el buffer de NodeRx se satura claramente.
+- Para `generationInterval = 1.0 s` (Figura 1) los tres buffers se mantienen casi vacíos, sin picos de saturación.
+- Con `generationInterval = 0.3 s` (Figura 2)  empiezan a haber pequeñas oscilaciones en el buffer de recepción (`NodeRx`), pero sin llegar a colapsar.
+- Al reducir a `generationInterval = 0.2 s` (Figura 3) el buffer de `NodeRx` se satura claramente.
 
 #### Hipótesis segundo caso:
 
