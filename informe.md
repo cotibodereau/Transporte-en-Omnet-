@@ -57,7 +57,7 @@ En este primer caso evaluamos la ocupación de los tres buffers (`NodeRx`, `Node
 Como podemos ver desde el inicio, la tasa de transferencia hacia `NodeRx` es mayor que la tasa que va desde `NodeRx` hacia Sink. Esto provoca que entren más paquetes al sistema de los que pueden salir. Por lo tanto, si el `generationInterval` es muy pequeño y se generan muchos paquetes por segundo, el buffer de `NodeRx` se empieza a llenar hasta colapsar, ya que los paquetes se acumulan más rápido de lo que pueden ser procesados.
 
 **Figura 1.** `generationInterval = 0.1 s`  
-![Buffer size vector (interval 0.1 s)](imagenes/figura0.png)
+![Buffer size vector (interval 0.1 s)](imagenes/figura0.jpeg)
 
 **Figura 2.** `generationInterval = 0.2 s`  
 ![Buffer size vector (interval 0.2 s)](imagenes/figura2.png)
