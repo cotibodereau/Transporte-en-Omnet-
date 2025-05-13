@@ -281,14 +281,18 @@ El sistema puede ser sensible a los parámetros de configuración y a los tiempo
 
 ## 6. Conclusiones
 
-El control adaptativo de flujo basado en el algoritmo DynamicFlow es esencial para gestionar la congestión y optimizar el rendimiento de las redes de comunicación. El sistema implementado demuestra la eficacia de los principios de control adaptativo para mejorar la estabilidad y la eficiencia de la red, ofreciendo mejoras significativas en throughput, reducción de pérdida de paquetes y disminución de latencia.
+Pudimos ver que un mecanismo de control de flujo adaptativo, como el implementado con DynamicFlow, resulta muy eficaz para evitar la congestión y mantener un buen nivel de rendimiento en la red. Al ajustar automáticamente la tasa de envío según el estado de las colas, se logra:
 
-Su naturaleza adaptativa lo hace particularmente adecuado para entornos de red dinámicos donde las condiciones de tráfico varían constantemente. La implementación del control adaptativo de flujo representa una estrategia prometedora para mejorar la estabilidad y el rendimiento de las redes modernas, especialmente en escenarios con recursos limitados o alta demanda de tráfico.
+- Alto throughput, incluso cuando la carga varía de forma abrupta.
 
-Las futuras investigaciones pueden centrarse en el desarrollo de algoritmos de control de flujo más robustos y adaptables, así como en la integración con otras técnicas de gestión de calidad de servicio para optimizar aún más el rendimiento de la red.
+- Mínimas pérdidas de paquetes, evitando el desbordamiento de buffers.
 
-## herramientas de Inteligencia Artificia
-Se utilizaron modelos de lenguaje generativo como Claude, Gemini para preguntar sobre tipo de estructuras y modelos de objetos, auque fueron bastante erroneos fue de ayuda teorica para implementar lo que teniamos en mente, tambien usamos Copilot de Visual Studio code pero tambien con mucho cuidado por que tambien no eran del todo correctas sus sugerencias. 
+- Baja latencia, al impedir la formación de embotellamientos prolongados.
+
+La principal ventaja de este enfoque es que no requiere conocimiento previo de la carga de la red: monitorea, aprende y adapta en tiempo real. Esto lo hace especialmente apropiado para entornos dinámicos, característicos de aplicaciones modernas.
+
+Como próximos pasos, proponemos explorar otros algoritmos de control, integrar mecanismos de calidad de servicio para priorizar tráfico crítico y evaluar la escalabilidad de la solución en entornos más complejos. Con todo eso, estos avances contribuirán a desarrollar redes más estables y eficientes bajo condiciones de tráfico variables## herramientas de Inteligencia Artificial
+Se utilizaron modelos de lenguaje generativo como Claude y Gemini para preguntar sobre tipo de estructuras y modelos de objetos. Nos sirvió de ayuda teórica para implementar lo que teníamos en mente, también usamos Copilot de Visual Studio code pero con mucho cuidado por que no eran del todo correctas sus sugerencias. ChatGPT también nos ayudó a solucionar erorres que nos daba OMNeT++ de compilación.
 
 
 ## Referencias
