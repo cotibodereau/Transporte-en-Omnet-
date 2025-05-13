@@ -77,18 +77,18 @@ En el segundo caso, aunque los buffers de entrada y salida tienen la misma capac
 
 Se observan cuellos de botella cuando la velocidad de generación de paquetes supera la capacidad de salida del sistema. Los buffers comienzan a saturarse rápidamente con intervalos bajos.
 
-
 **Figura 4.** `generationInterval = 0.1 s`  
-![Buffer size vector (interval 0.1 s)](/mnt/data/Line Chart(0.1).png)
+![Buffer size vector (interval 0.1 s)](imagenes/figura4.png)
 
 **Figura 5.** `generationInterval = 0.2 s`  
-![Buffer size vector (interval 0.2 s)](/mnt/data/Line Chart(0.2).png)
+![Buffer size vector (interval 0.2 s)](imagenes/figura5.png)
 
 **Figura 6.** `generationInterval = 0.3 s`  
-![Buffer size vector (interval 0.3 s)](/mnt/data/Line Chart(0.3).png)
+![Buffer size vector (interval 0.3 s)](imagenes/figura6.png)
 
 **Figura 7.** `generationInterval = 1.0 s`  
-![Buffer size vector (interval 1.0 s)](/mnt/data/Line Chart(1).png)
+![Buffer size vector (interval 1.0 s)](imagenes/figura7.png)
+
 
 **Observaciones:**
 
