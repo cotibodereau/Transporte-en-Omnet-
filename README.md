@@ -9,20 +9,36 @@
 * Fonseca Gonzalo Agustín
 
 
-### Tabla de Contenidos
+## Tabla de Contenidos
 
 1. [Objetivos](#objetivos)
-2. [Tarea 1 – Análisis](#tarea-1--análisis)
-
-   1. [Modelo implementado](#modelo-implementado)
-   2. [Resultados](#resultados)
-   3. [Discusión](#discusión)
-3. [Tarea 2 – Diseño](#tarea-2--diseño)
-
-   1. [Algoritmo propuesto](#algoritmo-propuesto)
-   2. [Resultados](#resultados-1)
-   3. [Discusión](#discusión-1)
-4. [Conclusiones Generales](#conclusiones-generales)
+2. [Tarea 1 – Análisis](#tarea-1--análisis)  
+   2.1. [Modelo implementado](#modelo-implementado)  
+   2.2. [Resultados](#resultados)  
+   2.3. [Discusión](#discusión)  
+3. [Algoritmo DynamicFlow para la Mitigación de Congestión en Redes de Comunicación](#algoritmo-dynamicflow-para-la-mitigación-de-congestión-en-redes-de-comunicación)  
+   3.1. [Resumen Ejecutivo](#resumen-ejecutivo)  
+   3.2. [Introducción](#1-introducción)  
+       - [Contexto](#contexto)  
+       - [Motivación](#motivación)  
+       - [Objetivos](#objetivos-1)  
+       - [Desafíos Específicos](#desafíos-específicos)  
+   3.3. [Diseño del Sistema: Algoritmo DynamicFlow](#2-diseño-del-sistema-algoritmo-dynamicflow)  
+       - [Arquitectura de la Red](#arquitectura-de-la-red)  
+       - [Mecanismo de Control Adaptativo DynamicFlow](#mecanismo-de-control-adaptativo-dynamicflow)  
+   3.4. [Escenarios de Prueba y Evaluación](#3-escenarios-de-prueba-y-evaluación)  
+       - [Configuración de la Simulación](#configuración-de-la-simulación)  
+       - [Métricas de Rendimiento](#métricas-de-rendimiento)  
+       - [Presentación y Análisis de Resultados](#presentación-y-análisis-de-resultados)  
+       - [Impacto en Métricas Clave de Rendimiento](#impacto-en-métricas-clave-de-rendimiento)  
+   3.5. [Discusión](#4-discusión)  
+       - [Eficacia del Control Adaptativo](#eficacia-del-control-adaptativo)  
+       - [Relación con los Principios de Control Adaptativo](#relación-con-los-principios-de-control-adaptativo)  
+       - [Ventajas Clave del Algoritmo DynamicFlow](#ventajas-clave-del-algoritmo-dynamicflow)  
+       - [Limitaciones y Mejoras Futuras](#limitaciones-y-mejoras-futuras)  
+   3.6. [Recomendaciones para Implementaciones Prácticas](#5-recomendaciones-para-implementaciones-prácticas)  
+   3.7. [Conclusiones](#6-conclusiones)  
+4. [Referencias](#referencias)
 
 
 ---
