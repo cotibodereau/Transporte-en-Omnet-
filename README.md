@@ -23,7 +23,7 @@
    2. [Resultados](#resultados-1)
    3. [Discusión](#discusión-1)
 4. [Conclusiones Generales](#conclusiones-generales)
-5. [ Detalle de uso de IA](#detalle-de-uso-de-ia)
+
 
 ---
 
